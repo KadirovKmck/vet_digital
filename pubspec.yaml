@@ -55,6 +55,7 @@ dependencies:
   url_launcher: ^6.1.7
   whatsapp_unilink: ^2.0.1+1
   flutter_launcher_icons: ^0.11.0
+  shared_preferences: ^2.2.3
 
 dev_dependencies:
   flutter_test:

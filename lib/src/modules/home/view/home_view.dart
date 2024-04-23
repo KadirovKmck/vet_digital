@@ -31,7 +31,6 @@ class HomeView extends StatelessWidget {
   final _items = const [
     MenuPage(),
     NewsPage(),
-    VetPage(),
     ConnectionPage(),
   ];
 
@@ -54,7 +53,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -110,7 +108,6 @@ class HomeView extends StatelessWidget {
                 items: [
                   _buildNavBarItem('assets/icons/home.svg', context, 0),
                   _buildNavBarItem('assets/icons/news.svg', context, 1),
-                  _buildNavBarItem('assets/icons/vet.svg', context, 2),
                   _buildNavBarItem('assets/icons/call.svg', context, 3),
                 ],
                 onTap: (val) async {

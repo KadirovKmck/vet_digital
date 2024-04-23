@@ -6,6 +6,7 @@ import '../../../../generated/assets.gen.dart';
 import '../../data/data.dart';
 import 'sub_menu_info.dart';
 
+
 class SubMenuView extends StatelessWidget {
   const SubMenuView({
     super.key,

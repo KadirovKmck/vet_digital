@@ -5,7 +5,6 @@ import 'package:vet_digital/src/app/theme/theme.dart';
 import 'package:vet_digital/src/app_constants/constants.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
-
 const string = AppString;
 const space = AppSpace;
 
@@ -69,9 +68,9 @@ class AppBottomSheet {
                               borderRadius: BorderRadius.circular(15),
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const <Widget>[
+                            children: <Widget>[
                               Icon(
                                 Icons.telegram,
                                 color: Color(0xff0088cc),
@@ -100,11 +99,11 @@ class AppBottomSheet {
                               borderRadius: BorderRadius.circular(15),
                             ),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const <Widget>[
+                            children: <Widget>[
                               Icon(
-                                Icons.whatsapp,
+                                Icons.abc,
                                 color: Color(0xff25D366),
                               ),
                               AppSpace.sizedW10,

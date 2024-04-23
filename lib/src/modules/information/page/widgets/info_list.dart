@@ -1,55 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:vet_digital/src/modules/information/page/view/jerjemish_view.dart';
+import 'package:vet_digital/src/modules/information/page/view/momojemish_view.dart';
 
 import '../../../../app/theme/theme.dart';
 import '../../information.dart';
-
 
 class MenuList extends StatelessWidget {
   const MenuList(this.items, {super.key});
 
   final List<InfoMenu> items;
   // final List<InfoSubMenu> infoSubItems;
-
   @override
   Widget build(BuildContext context) {
+    final List<String> momojemish = [
+      'Momojemish',
+      'Jerjemish',
+    ];
+    final List<String> listAssetsName = [
+      'assets/images/fruits.png',
+      'assets/images/vegetable.png',
+    ];
+    final List<Widget> momo = [
+      const MomojemishView(),
+      const JerjemishView(),
+    ];
+
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
+        crossAxisCount: 1,
         crossAxisSpacing: 25,
         mainAxisSpacing: 25,
       ),
-      itemCount: items.length,
+      itemCount: 2,
       itemBuilder: (BuildContext context, int index) {
-        final info = items[index];
-
         return InkWell(
-          onTap: () async {
-            
-            if (info.isInfo) {
-
-              // ignore: use_build_context_synchronously
-              await Navigator.push(
-                context,
-                // ignore: inference_failure_on_instance_creation
-                MaterialPageRoute(
-                  // builder: (context) => const InfoView(),
-                  builder: (context) => InfoView(infoModel: info.infoModel!),
-                ),
-              );
-
-            } else {
-              await Navigator.push(
-                context,
-                // ignore: inference_failure_on_instance_creation
-                MaterialPageRoute(
-                  builder: (context) => SubMenuView(
-                    infoSubMenuModel: info.infoSubMenu!,
-                  ),
-                ),
-              );
-            }
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => momo[index])));
           },
           child: Card(
             shape: RoundedRectangleBorder(
@@ -59,11 +46,14 @@ class MenuList extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(info.icon),
+                Image.asset(
+                  listAssetsName[index],
+                  height: 160,
+                ),
                 const SizedBox(height: 13),
                 Text(
-                  info.title,
-                  style: AppTextStyles.poppinsWhite15w400,
+                  momojemish[index],
+                  style: AppTextStyles.robotoWhite16w400,
                 ),
               ],
             ),
